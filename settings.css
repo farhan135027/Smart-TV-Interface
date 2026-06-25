@@ -1,0 +1,36 @@
+.settings {
+    padding: 0 30px;
+}
+
+.settings p {
+    color: white;
+}
+
+.settings select {
+    background-color: rgb(169, 169, 169);
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.settings option {
+    background-color: rgb(169, 169, 169);
+    color: white;
+}
+
+.settings button {
+    background: none;
+    border: none;
+    fill: rgb(169, 169, 169);
+}
+
+.settings div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.settings div div {
+    display: block;
+}

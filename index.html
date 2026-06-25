@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyTV</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        #featured {
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 40px auto;
+            max-width: 1000px;
+            position: relative;
+        }
+
+        #featured img {
+            width: 100%;
+        }
+
+        #featured:hover img {
+            opacity: 0.9;
+        }
+
+        #featured:hover #play {
+            opacity: 1;
+        }
+
+        #featured div:last-child {
+            background-color: rgb(0, 0, 0, 0.7);
+            bottom: 0;
+            color: white;
+            padding: 10px 20px;
+            position: absolute;
+            text-align: justify;
+        }
+
+        #featured #play {
+            fill: white;
+            left: 50%;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+
+        #featured #play:hover {
+            fill: rgb(240, 240, 240);
+        }
+
+        #latest {
+            color: white;
+            margin: 40px auto;
+            max-width: 1000px;
+        }
+
+        #latest .item {
+            border-radius: 3px;
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+            width: 162px;
+        }
+
+        #latest .item:hover {
+            opacity: 0.8;
+        }
+
+        #latest .item p {
+            background: rgba(0, 0, 0, 0.5);
+            bottom: 0;
+            color: white;
+            padding: 4px 0;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+        }
+
+        #latest .item img {
+            width: 100%;
+        }
+    </style>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <!-- Top navigation bar -->
+    <div id="topnav">
+        <div>
+            <button onclick="openSidebar()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M3 18v-2h18v2Zm0-5v-2h18v2Zm0-5V6h18v2Z"/></svg>
+            </button>
+        </div>
+        <div>
+            <form action="">
+                <label for="">
+                    <input type="text" placeholder="Search">
+                </label>
+            </form>
+            <a href="account.html">
+                <button>Izzat</button>
+            </a>
+        </div>
+    </div>
+    <!-- Side bar -->
+    <div id="sidebar">
+        <div>
+            <div>
+                <a href="index.html">Home</a>
+                <div>
+                    <button onclick="closeSidebar()">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M10 22 0 12 10 2l1.775 1.775L3.55 12l8.225 8.225Z"/></svg>
+                    </button>
+                </div>
+            </div>
+            <a href="genres.html">Genres</a>
+            <a href="watchlist.html">Watchlist</a>
+            <a href="history.html">History</a>
+            <a href="settings.html">Settings</a>
+        </div>
+    </div>
+    <!-- Login modal -->
+    <div id="login">
+        <div>
+            <div>
+                <button onclick="closeLogin()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5l5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6Z"/></svg>
+                </button>
+            </div>
+            <div>
+                <input type="text" placeholder="Email or phone number">
+                <input type="password" placeholder="Password">
+                <a href="index.html">
+                    <button>Login</button>
+                </a>
+                <p>Not registered yet?</p>
+                <button onclick="closeLogin(); openRegister()">Register</button>
+            </div>
+        </div>
+    </div>
+    <!-- Register modal -->
+    <div id="register">
+        <div>
+            <div>
+                <button onclick="closeRegister(); openLogin()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="m12 20-8-8 8-8 1.425 1.4-5.6 5.6H20v2H7.825l5.6 5.6Z"/></svg>
+                </button>
+                <button onclick="closeRegister()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5l5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6Z"/>
+                </button>
+            </div>
+            <div>
+                <input type="text" placeholder="Email or phone number">
+                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Confirm password">
+                <button onclick="closeRegister(); openLogin()">Register</button>
+            </div>
+        </div>
+    </div>
+    <!-- End -->
+    <main>
+        <div id="featured">
+            <img src="images/1.jpg">
+            <div id="play">
+                <a href="movie.html" style="fill: white;">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M16 37.85v-28l22 14Z"/></svg>
+                </a>
+            </div>
+            <div>
+                <p>Synopsis</p>
+                <p>Four high school kids discover an old video game console and are drawn into the game's jungle setting,  literally becoming the adult avatars they chose. What they discover is that you don't just play Jumanji - you must survive it. To beat the game and return to the real world, they'll have to go on the most dangerous adventure of their lives, discover what Alan Parrish left 20 years ago, and change the way they think about themselves - or they'll be stuck in the game forever.</p>
+            </div>
+        </div>
+        <div id="latest">
+            <h3>Latest</h3>
+            <div class="item">
+                <a href="movie.html">
+                    <p>X-MAN</p>
+                    <img src="images/movie1.jpg">
+                </a>
+            </div>
+            <div class="item">
+                <a href="movie.html">
+                    <p>SPIDER MAN 2</p>
+                    <img src="images/movie2.jpg">
+                </a>
+            </div>
+            <div class="item">
+                <a href="movie.html">
+                    <p>SPIDER MAN 3</p>
+                    <img src="images/movie3.jpg">
+                </a>
+            </div>
+            <div class="item">
+                <a href="movie.html">
+                    <p>VALKYRIE</p>
+                    <img src="images/movie4.jpg">
+                </a>
+            </div>
+            <div class="item">
+                <a href="movie.html">
+                    <p>GLADIATOR</p>
+                    <img src="images/movie5.jpg">
+                </a>
+            </div>
+            <div class="item">
+                <a href="movie.html">
+                    <p>ICE AGE</p>
+                    <img src="images/movie6.jpg">
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

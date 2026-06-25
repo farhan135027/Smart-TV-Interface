@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>MyTV</title>
+      <link rel="stylesheet" href="css/style.css">
+      <script src="js/script.js"></script>
+      <style>
+          main {
+            margin: 40px auto;
+            max-width: 1000px;
+          }
+
+          #movie h1 {
+            color: white;
+            text-align: center;
+          }
+
+          #recommended {
+              color: white;
+              margin-top: 50px;
+          }
+  
+          #recommended .item {
+              border-radius: 3px;
+              display: inline-block;
+              overflow: hidden;
+              position: relative;
+              width: 162px;
+          }
+  
+          #recommended .item:hover {
+              opacity: 0.8;
+          }
+  
+          #recommended .item p {
+              background: rgba(0, 0, 0, 0.5);
+              bottom: 0;
+              color: white;
+              padding: 4px 0;
+              position: absolute;
+              text-align: center;
+              width: 100%;
+          }
+  
+          #recommended .item img {
+              width: 100%;
+          }
+      </style>
+    </head>
+<body>
+    <!-- Top navigation bar -->
+    <div id="topnav">
+      <div>
+          <button onclick="openSidebar()">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M3 18v-2h18v2Zm0-5v-2h18v2Zm0-5V6h18v2Z"/></svg>
+          </button>
+      </div>
+      <div>
+          <form action="">
+              <label for="">
+                  <input type="text" placeholder="Search">
+              </label>
+          </form>
+          <a>
+              <button>Izzat</button>
+          </a>
+      </div>
+  </div>
+  <!-- Side bar -->
+  <div id="sidebar">
+      <div>
+          <div>
+              <a href="index.html">Home</a>
+              <div>
+                  <button onclick="closeSidebar()">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M10 22 0 12 10 2l1.775 1.775L3.55 12l8.225 8.225Z"/></svg>
+                  </button>
+              </div>
+          </div>
+          <a href="genres.html">Genres</a>
+          <a href="watchlist.html">Watchlist</a>
+          <a href="history.html">History</a>
+          <a href="settings.html">Settings</a>
+      </div>
+  </div>
+  <!-- Login modal -->
+  <div id="login">
+      <div>
+          <div>
+              <button onclick="closeLogin()">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5l5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6Z"/></svg>
+              </button>
+          </div>
+          <div>
+              <input type="text" placeholder="Email or phone number">
+              <input type="password" placeholder="Password">
+              <a href="index.html">
+                  <button>Login</button>
+              </a>
+              <p>Not registered yet?</p>
+              <button onclick="closeLogin(); openRegister()">Register</button>
+          </div>
+      </div>
+  </div>
+  <!-- Register modal -->
+  <div id="register">
+      <div>
+          <div>
+              <button onclick="closeRegister(); openLogin()">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="m12 20-8-8 8-8 1.425 1.4-5.6 5.6H20v2H7.825l5.6 5.6Z"/></svg>
+              </button>
+              <button onclick="closeRegister()">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5l5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6Z"/>
+              </button>
+          </div>
+          <div>
+              <input type="text" placeholder="Email or phone number">
+              <input type="password" placeholder="Password">
+              <input type="password" placeholder="Confirm password">
+              <button onclick="closeRegister(); openLogin()">Register</button>
+          </div>
+      </div>
+  </div>
+  <!-- End -->
+  <main>
+    <div id="movie">
+      <h1>Jumanji</h1>
+      <video src="" controls style="width: 100%;"></video>
+    </div>
+
+    </video>
+    <div id="recommended">
+        <h3>Recommended</h3>
+        <div class="item">
+            <a href="movie.html">
+                <p>X-MAN</p>
+                <img src="images/movie1.jpg">
+            </a>
+        </div>
+        <div class="item">
+            <a href="movie.html">
+                <p>SPIDER MAN 2</p>
+                <img src="images/movie2.jpg">
+            </a>
+        </div>
+        <div class="item">
+            <a href="movie.html">
+                <p>SPIDER MAN 3</p>
+                <img src="images/movie3.jpg">
+            </a>
+        </div>
+        <div class="item">
+            <a href="movie.html">
+                <p>VALKYRIE</p>
+                <img src="images/movie4.jpg">
+            </a>
+        </div>
+        <div class="item">
+            <a href="movie.html">
+                <p>GLADIATOR</p>
+                <img src="images/movie5.jpg">
+            </a>
+        </div>
+        <div class="item">
+            <a href="movie.html">
+                <p>ICE AGE</p>
+                <img src="images/movie6.jpg">
+            </a>
+        </div>
+    </div>
+</main>
+  </body>
+</html>

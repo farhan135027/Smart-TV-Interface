@@ -1,0 +1,193 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyTV</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js"></script>
+  <style>
+    #genres {
+      margin: 40px auto;
+      max-width: 1000px;
+    }
+
+    #genres p {
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 4px;
+    }
+
+    .genre {
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      width: 200px;
+    }
+
+    .genre-image {
+      display: block;
+      width: 200px;
+      height: auto;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 200px;
+      left: 0;
+      right: 0;
+      background-color: #000000;
+      overflow: hidden;
+      width: 200px;
+      height: 0;
+      transition: 0.5s ease;
+      cursor: pointer;
+    }
+
+    .genre:hover .overlay {
+      bottom: 0;
+      height: 200px;
+    }
+
+    .genre-text {
+      white-space: nowrap;
+      color: white;
+      font-size: 20px;
+      position: absolute;
+      overflow: hidden;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <!-- Top navigation bar -->
+  <div id="topnav">
+  <div>
+  <button onclick="openSidebar()">
+  <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M3 18v-2h18v2Zm0-5v-2h18v2Zm0-5V6h18v2Z"/></svg>
+  </button>
+  </div>
+  <div>
+  <form action="">
+  <label for="">
+    <input type="text" placeholder="Search">
+  </label>
+  </form>
+  <a>
+  <button>Izzat</button>
+  </a>
+  </div>
+  </div>
+  <!-- Side bar -->
+  <div id="sidebar">
+  <div>
+  <div>
+  <a href="index.html">Home</a>
+  <div>
+    <button onclick="closeSidebar()">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M10 22 0 12 10 2l1.775 1.775L3.55 12l8.225 8.225Z"/></svg>
+    </button>
+  </div>
+  </div>
+  <a href="genres.html">Genres</a>
+  <a href="watchlist.html">Watchlist</a>
+  <a href="history.html">History</a>
+  <a href="settings.html">Settings</a>
+  </div>
+  </div>
+  <!-- Login modal -->
+  <div id="login">
+  <div>
+  <div>
+  <button onclick="closeLogin()">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5l5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6Z"/></svg>
+  </button>
+  </div>
+  <div>
+  <input type="text" placeholder="Email or phone number">
+  <input type="password" placeholder="Password">
+  <a href="index.html">
+    <button>Login</button>
+  </a>
+  <p>Not registered yet?</p>
+  <button onclick="closeLogin(); openRegister()">Register</button>
+  </div>
+  </div>
+  </div>
+  <!-- Register modal -->
+  <div id="register">
+  <div>
+  <div>
+  <button onclick="closeRegister(); openLogin()">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="m12 20-8-8 8-8 1.425 1.4-5.6 5.6H20v2H7.825l5.6 5.6Z"/></svg>
+  </button>
+  <button onclick="closeRegister()">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5l5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6Z"/>
+  </button>
+  </div>
+  <div>
+  <input type="text" placeholder="Email or phone number">
+  <input type="password" placeholder="Password">
+  <input type="password" placeholder="Confirm password">
+  <button onclick="closeRegister(); openLogin()">Register</button>
+  </div>
+  </div>
+  </div>
+  <!-- End -->
+  <div id="genres">
+    <p>Genres</p>
+    <div id="grid">
+      <div class="genre">
+        <img src="images/horror.jpeg" alt="Avatar" class="genre-image">
+        <div class="overlay">
+          <div class="genre-text">Horror</div>
+        </div>
+      </div>
+      <div class="genre" >
+        <img src="images/action.jpeg" alt="Avatar" class="genre-image">
+        <div class="overlay">
+          <div class="genre-text">Action</div>
+        </div>
+      </div>
+      <div class="genre">
+        <img src="images/romance.jpeg" alt="Avatar" class="genre-image">
+        <div class="overlay">
+          <div class="genre-text">Romance</div>
+        </div>
+      </div>
+      <div class="genre" >
+        <img src="images/triller.jpeg" alt="Avatar" class="genre-image">
+        <div class="overlay">
+          <div class="genre-text">Triller</div>
+        </div>
+      </div>
+      <div class="genre" >
+        <img src="images/comedy.jpeg" alt="Avatar" class="genre-image">
+        <div class="overlay">
+          <div class="genre-text">Comedy</div>
+        </div>
+      </div>
+      <div class="genre" >
+        <img src="images/scifi2.jpeg" alt="Avatar" class="genre-image">
+        <div class="overlay">
+          <div class="genre-text">Sci-Fi</div>
+        </div>
+      </div>
+      <div class="genre" >
+        <img src="images/fan.jpeg" alt="Avatar" class="genre-image">
+        <div class="overlay">
+          <div class="genre-text">Fantasy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body> 
+</html>

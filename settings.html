@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link rel="stylesheet" href="settings.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <script>
+      var autoplayOn = false;
+
+      function toggleAutoplay() {
+        var autoplayToggle = document.getElementById("autoplayToggle");
+
+        autoplayOn = !autoplayOn;
+
+        if (autoplayOn) {
+          autoplayToggle.innerHTML =
+            '<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M14 37.15q-5.5 0-9.325-3.85Q.85 29.45.85 24q0-5.5 3.825-9.325Q8.5 10.85 14 10.85h20q5.5 0 9.325 3.85 3.825 3.85 3.825 9.3 0 5.5-3.825 9.325Q39.5 37.15 34 37.15Zm20.05-8.1q2.1 0 3.575-1.475T39.1 24q0-2.1-1.475-3.575T34.05 18.95q-2.1 0-3.575 1.475T29 24q0 2.1 1.475 3.575t3.575 1.475Z"/></svg>';
+        } else {
+          autoplayToggle.innerHTML =
+            '<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M14 37.15q-5.5 0-9.325-3.85Q.85 29.45.85 24q0-5.5 3.825-9.325Q8.5 10.85 14 10.85h20q5.5 0 9.325 3.85 3.825 3.85 3.825 9.3 0 5.5-3.825 9.325Q39.5 37.15 34 37.15Zm-.05-8.1q2.1 0 3.575-1.475T19 24q0-2.1-1.475-3.575T13.95 18.95q-2.1 0-3.575 1.475T8.9 24q0 2.1 1.475 3.575t3.575 1.475Z"/></svg>';
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Top navigation bar -->
+    <div id="topnav">
+      <div>
+          <button onclick="openSidebar()">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M3 18v-2h18v2Zm0-5v-2h18v2Zm0-5V6h18v2Z"/></svg>
+          </button>
+      </div>
+      <div>
+          <form action="">
+              <label for="">
+                  <input type="text" placeholder="Search">
+              </label>
+          </form>
+          <a>
+              <button>Izzat</button>
+          </a>
+      </div>
+  </div>
+  <!-- Side bar -->
+  <div id="sidebar">
+      <div>
+          <div>
+              <a href="index.html">Home</a>
+              <div>
+                  <button onclick="closeSidebar()">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M10 22 0 12 10 2l1.775 1.775L3.55 12l8.225 8.225Z"/></svg>
+                  </button>
+              </div>
+          </div>
+          <a href="genres.html">Genres</a>
+          <a href="watchlist.html">Watchlist</a>
+          <a href="history.html">History</a>
+          <a href="settings.html">Settings</a>
+      </div>
+  </div>
+  <!-- Login modal -->
+  <div id="login">
+      <div>
+          <div>
+              <button onclick="closeLogin()">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5l5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6Z"/></svg>
+              </button>
+          </div>
+          <div>
+              <input type="text" placeholder="Email or phone number">
+              <input type="password" placeholder="Password">
+              <a href="index.html">
+                  <button>Login</button>
+              </a>
+              <p>Not registered yet?</p>
+              <button onclick="closeLogin(); openRegister()">Register</button>
+          </div>
+      </div>
+  </div>
+  <!-- Register modal -->
+  <div id="register">
+      <div>
+          <div>
+              <button onclick="closeRegister(); openLogin()">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="m12 20-8-8 8-8 1.425 1.4-5.6 5.6H20v2H7.825l5.6 5.6Z"/></svg>
+              </button>
+              <button onclick="closeRegister()">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5l5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6Z"/>
+              </button>
+          </div>
+          <div>
+              <input type="text" placeholder="Email or phone number">
+              <input type="password" placeholder="Password">
+              <input type="password" placeholder="Confirm password">
+              <button onclick="closeRegister(); openLogin()">Register</button>
+          </div>
+      </div>
+  </div>
+  <!-- End -->
+
+  <div class="settings">
+    <p style="margin-left: 8px">SETTINGS</p>
+    <div>
+      <div>
+        <p>Language</p>
+        <p style="color: white; font-size: smaller">
+          Choose language - Changes will be applied after restarting
+        </p>
+      </div>
+      <div>
+        <select>
+          <option>Bahasa Malaysia</option>
+          <option selected>English (US)</option>
+          <option>中文</option>
+          <option>日本語</option>
+          <option>한국어</option>
+        </select>
+      </div>
+    </div>
+    <div>
+      <p>Autoplay</p>
+      <button id="autoplayToggle" onclick="toggleAutoplay()">
+        <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48">
+          <path d="M14 37.15q-5.5 0-9.325-3.85Q.85 29.45.85 24q0-5.5 3.825-9.325Q8.5 10.85 14 10.85h20q5.5 0 9.325 3.85 3.825 3.85 3.825 9.3 0 5.5-3.825 9.325Q39.5 37.15 34 37.15Zm-.05-8.1q2.1 0 3.575-1.475T19 24q0-2.1-1.475-3.575T13.95 18.95q-2.1 0-3.575 1.475T8.9 24q0 2.1 1.475 3.575t3.575 1.475Z" />
+        </svg>
+      </button>
+    </div>
+    <div>
+      <p>Streaming quality</p>
+      <div>
+        <select>
+          <option selected>Automatic</option>
+          <option>2160p (4K)</option>
+          <option>1080p</option>
+          <option>720p</option>
+          <option>480p</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
